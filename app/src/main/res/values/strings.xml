@@ -2,13 +2,22 @@
     <string name="app_name">AYPQuiz</string>
     <string name="next_button">NEXT</string>
     <string name="previous_button">PREVIOUS</string>
+    <string name="cheat_button">CHEAT</string>
+    <string name="confirm_button">YOU REALLY WANT TO KNOW THE ANSWER?</string>
     <string name="true_button">TRUE</string>
     <string name="false_button">FALSE</string>
     <string name="wrong_text">WRONG !!!</string>
     <string name="correct_text">CORRECT !!!</string>
 
-    <string name="question_1_nile">The longest river in the world is Nile ?</string> //True
-    <string name="question_2_Pro">Pro is Handsome ?</string> //True
-    <string name="question_3_math">1 + 3 = 88 ?</string> //False
-    <string name="question_4_mars">Mars doesn\'t have moon ?</string> //False
+    <string name="question_1_nile">The longest river in the world is Nile ?</string>
+    //True
+    <string name="question_2_Pro">Pro is Handsome ?</string>
+    //True
+    <string name="question_3_math">1 + 3 = 88 ?</string>
+    //False
+    <string name="question_4_mars">Mars doesn\'t have moon ?</string>
+    <string name="answer_is_true">Answer is TRUE</string>
+    <string name="answer_is_false">Answer is FALSE</string>
+    <string name="cheater_text">You are Cheater!!</string>
+    //False
 </resources>

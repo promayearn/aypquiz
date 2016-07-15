@@ -4,7 +4,6 @@ package com.augmentis.ayp.aypquiz;
  * Created by Chayanit on 7/14/2016.
  */
 public class Question {
-
     private int questionId;
     private boolean answer;
 
@@ -27,5 +26,9 @@ public class Question {
 
     public void setAnswer(boolean answer) {
         this.answer = answer;
+    }
+
+    public boolean getAnswer() {
+        return answer;
     }
 }

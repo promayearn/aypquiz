@@ -48,11 +48,20 @@
             android:text="@string/previous_button" />
 
         <Button
+            android:backgroundTint="@color/colorAccent"
+            android:id="@+id/cheat_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cheat_button"
+            android:layout_gravity="center_horizontal|bottom" />
+
+        <Button
             android:id="@+id/next_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorAccent"
             android:drawableRight="@drawable/arrow_right"
             android:text="@string/next_button" />
+
     </LinearLayout>
 </LinearLayout>
