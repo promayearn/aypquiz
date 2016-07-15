@@ -1,13 +1,11 @@
 package com.augmentis.ayp.aypquiz;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,12 +25,14 @@ public class QuizActivity extends AppCompatActivity {
             new Question(R.string.question_1_nile, true),
             new Question(R.string.question_2_Pro, true),
             new Question(R.string.question_3_math, false),
-            new Question(R.string.question_4_mars, false)
+            new Question(R.string.question_4_mars, false),
+            new Question(R.string.question_5_sun, false),
+            new Question(R.string.question_6_water, true)
     };
 
     private int currentIndex;
 
-    private static final String TAG = "AYPQUIZ";
+    private static final String TAG = "QuizActivity";
     private static final String INDEX = "INDEX";
 
     @Override
@@ -90,6 +90,7 @@ public class QuizActivity extends AppCompatActivity {
         }else{
             currentIndex = 0;
         }
+
 
         questionText = (TextView) findViewById(R.id.text_question);
         resetCheated();
@@ -158,7 +159,7 @@ public class QuizActivity extends AppCompatActivity {
 //                currentIndex = (currentIndex-1) % questions.length;
 //                if(currentIndex < 0){
 //                    currentIndex = currentIndex + 4;
-//                }r
+//                }
                 resetCheated();
                 updateQuestion();
             }
@@ -178,6 +179,9 @@ public class QuizActivity extends AppCompatActivity {
                 return;
             }
             isCheated = CheatActivity.wasCheated(dataIntent);
+            if(isCheated){
+                setCheat();
+            }
         }
     }
 
@@ -198,6 +202,7 @@ public class QuizActivity extends AppCompatActivity {
 
         int result;
 
+        isCheated = questions[currentIndex].isCheated();
         //------------------------------------------------------------------------------------------
         //เช็คแบบสั้น
         // int result = (answer == correctAnswer) ? R.string.correct_text : R.string.incorrect_text;
@@ -216,5 +221,12 @@ public class QuizActivity extends AppCompatActivity {
         }
 
         Toast.makeText(QuizActivity.this, result, Toast.LENGTH_SHORT).show();
+    }
+
+    private void setCheat(){
+        if(isCheated){
+            questions[currentIndex].setCheated(true);
+        }
+        Log.d(TAG,"Setting Cheat " + questions[currentIndex].isCheated());
     }
 }
