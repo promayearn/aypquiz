@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class QuizActivity extends AppCompatActivity {
 
     private static final int REQUEST_CHEATED = 7628 ;
@@ -21,7 +23,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button cheatButton;
     private boolean isCheated;
 
-    Question[] questions = new Question[]{
+    private static Question[] questions = new Question[]{
             new Question(R.string.question_1_nile, true),
             new Question(R.string.question_2_Pro, true),
             new Question(R.string.question_3_math, false),
